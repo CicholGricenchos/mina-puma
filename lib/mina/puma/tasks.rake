@@ -26,6 +26,7 @@ namespace :puma do
           cd #{deploy_to}/#{current_path} && #{puma_cmd} -q -d -e #{puma_env} -b 'unix://#{puma_socket}' -S #{puma_state} --pidfile #{puma_pid} --control 'unix://#{pumactl_socket}'
         fi
       fi
+      sleep 1s
     ]
   end
 
